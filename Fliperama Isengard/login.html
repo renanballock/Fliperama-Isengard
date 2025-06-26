@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="inicio.css">
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -38,9 +40,35 @@
             </div>
         </div>
     </header>
-    <main class="imagemCentral">
-    <img src="ring.png" class="anel">
-    <h1 class="tituloCentral">Fliperama Isengard</h1>
-</main>
+    <main>
+        <section class="center" id="login">
+
+            <div class="cont-Login shadow">
+                <form>
+                    <label for="Nome"> Digite seu nome completo: </label><br>
+                    <input type="name" id="Nome" name="Nome">
+
+                    <label for="E-mail"> Digite seu E-mail: </label><br>
+                    <input type="email" id="E-mail" name="E-mail">
+
+                    <label for="Senha"> Digite sua senha: </label><br>
+                    <input type="password" id="Senha" name="Senha">
+
+                    <label for="Nome"> Confirme sua senha: </label><br>
+                    <input type="name" id="Nome" name="Nome">
+                    <div class="formulario">
+                        <button type="submit" class="botao-login">Confirmar Login</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="formulario box">
+            <div class="boxNovo">
+                <p>Ao enviar o confirmar o login, você receberá 5% na cafeteria “Tempero do Davi” em qualquer pedido.
+                </p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: #ffe2ac;
 }
 
 .container{
@@ -34,7 +35,38 @@
     height: 2em; /* aumenta o tamanho da imagem proporcional à fonte */
   }
 
-.imagemCentral{
+.imagemCentral {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background-position: center;
+    height: 80vh;
+}
+
+.anel {
+    width: 400px; /* ajuste conforme necessário */
+    height: auto;
+}
+
+.tituloCentral {
+    position: absolute;
+    font-size: 28px;
+    font-family: 'MedievalSharp', cursive;;
+    color: black;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 2.1vw
+}
+
+ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    
 }
