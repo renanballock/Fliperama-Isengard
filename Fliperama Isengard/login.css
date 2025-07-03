@@ -170,3 +170,10 @@ button:hover {
 .boxNovo p{
     background-color: #b3b3b3;
 }
+
+.imagemFundo{
+    background-image: url("rivendell.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

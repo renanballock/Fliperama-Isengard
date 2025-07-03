@@ -51,7 +51,7 @@
 .tituloCentral {
     position: absolute;
     font-size: 28px;
-    font-family: 'MedievalSharp', cursive;;
+    font-family: 'MedievalSharp', cursive;
     color: black;
     text-align: center;
 }
@@ -69,4 +69,11 @@ ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     
+}
+
+.imagemFundo{
+    background-image: url("lotrFundo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
