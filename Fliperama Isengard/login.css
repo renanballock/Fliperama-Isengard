@@ -4,7 +4,7 @@
     background-color: #ffe2ac;
 }
 
-.container{
+.container {
     font-size: 1.5vh;
     font-size: 1.5vw;
     width: 100%;
@@ -13,29 +13,33 @@
     box-sizing: border-box;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .texto-imagem {
-    display: flex;           /* Faz texto e imagem ficarem lado a lado */
-    align-items: center;     /* Alinha verticalmente */
+    display: flex;
+    /* Faz texto e imagem ficarem lado a lado */
+    align-items: center;
+    /* Alinha verticalmente */
     font-size: 20px;
-    gap: 8px;                /* Espaço entre imagem e texto */
-    text-decoration: underline;  
-    text-decoration: black;     
-             
-  }
-    
-  .texto-imagem img {
+    gap: 8px;
+    /* Espaço entre imagem e texto */
+    text-decoration: underline;
+    text-decoration: black;
+
+}
+
+.texto-imagem img {
     height: 1em;
     vertical-align: middle;
-    height: 2em; /* aumenta o tamanho da imagem proporcional à fonte */
-  }
+    height: 2em;
+    /* aumenta o tamanho da imagem proporcional à fonte */
+}
 
-.imagemCentral{
+.imagemCentral {
     align-items: center;
     background-position: center;
 }
@@ -118,6 +122,7 @@ button {
     transition: .5s;
     cursor: pointer;
 }
+
 button:hover {
     background-color: #000;
 }
@@ -125,11 +130,13 @@ button:hover {
 .formulario {
     display: flex;
     flex-direction: column;
-    align-items: center; /* centraliza no eixo horizontal */
+    align-items: center;
+    /* centraliza no eixo horizontal */
 }
 
 .botao-login {
-    margin-top: 20px; /* espaço acima do botão */
+    margin-top: 20px;
+    /* espaço acima do botão */
     padding: 10px 20px;
     background-color: #555;
     color: white;
@@ -141,21 +148,22 @@ button:hover {
     border: 2px solid black
 }
 
-.box{
+.box {
     width: 100%;
     height: 10vh;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centraliza no eixo horizontal */
+    align-items: center;
+    /* centraliza no eixo horizontal */
     padding: 20px;
     box-sizing: border-box;
 }
 
 
 
-.boxNovo{
+.boxNovo {
     width: 40%;
     height: 5vh;
     justify-content: center;
@@ -164,14 +172,15 @@ button:hover {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centraliza no eixo horizontal */
+    align-items: center;
+    /* centraliza no eixo horizontal */
 }
 
-.boxNovo p{
+.boxNovo p {
     background-color: #b3b3b3;
 }
 
-.imagemFundo{
+.imagemFundo {
     background-image: url("rivendell.png");
     background-position: center;
     background-repeat: no-repeat;
