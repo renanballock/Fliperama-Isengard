@@ -184,7 +184,7 @@ button:hover {
     border: none; /* Removido border: 2px solid black; para usar a sombra */
 }
 
-.info-desconto { /* Nova classe para o box de informações */
+.info { /* Nova classe para o box de informações */
     width: 100%;
     max-width: 600px; /* Mesma largura máxima do formulário para alinhamento */
     height: auto; /* Altura automática para o conteúdo */
