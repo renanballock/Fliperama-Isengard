@@ -1,19 +1,33 @@
+/* Reset básico para todos os elementos */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Adicionado para um modelo de caixa mais intuitivo */
+}
+
+/* Configuração do body para layout Flexbox */
+body {
     background-color: #ffe2ac;
+    background-image: url('isengardFundo.png'); /* Fundo geral da página */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Isso mantém a imagem de fundo fixa */
+
+    display: flex; /* Transforma o body em um container flexível */
+    flex-direction: column; /* Organiza os filhos (header, .imagemCentral, main, footer) em coluna */
+    min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura da viewport */
 }
 
-.container {
-    font-size: 1.5vh;
-    font-size: 1.5vw;
+/* Header */
+header .container {
+    font-size: clamp(12px, 1.5vw, 20px);
     width: 100%;
-    height: 10vh;
-    padding: 10vh 10vw;
-    box-sizing: border-box;
+    padding: 15px 5vw; /* Ajustado para um padding mais proporcional */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o header */
 }
 
-.flex {
+header .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,44 +35,16 @@
 
 .texto-imagem {
     display: flex;
-    /* Faz texto e imagem ficarem lado a lado */
     align-items: center;
-    /* Alinha verticalmente */
     font-size: 20px;
     gap: 8px;
-    /* Espaço entre imagem e texto */
     text-decoration: underline;
-    text-decoration: black;
-
+    text-decoration-color: white; /* Alterado para branco para contraste com fundo escuro do header */
 }
 
 .texto-imagem img {
-    height: 1em;
-    vertical-align: middle;
     height: 2em;
-    /* aumenta o tamanho da imagem proporcional à fonte */
-}
-
-.imagemCentral {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
-
-.anel {
-    width: 400px;
-    /* ajuste conforme necessário */
-    height: auto;
-}
-
-.tituloCentral {
-    position: absolute;
-    font-size: 28px;
-    font-family: 'MedievalSharp', cursive;
-    color: black;
-    text-align: center;
+    vertical-align: middle;
 }
 
 ul {
@@ -67,18 +53,183 @@ ul {
 
 ul li {
     display: inline-block;
-    margin: 0 2.1vw
+    margin: 0 1.5vw; /* Ajustado para um espaçamento mais responsivo */
 }
 
 ul li a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Alterado para branco para contraste com fundo escuro do header */
     text-decoration: none;
-
 }
 
-.imagemFundo {
-    background-image: url("lotrFundo.png");
+/* SEÇÃO DA CAPA PRINCIPAL - .imagemCentral */
+.imagemCentral {
+    position: relative; /* Essencial para o posicionamento do anel e título */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo (anel e título) */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    
+    height: 85vh; /* Aumenta a altura da sessão para 85% da viewport */
+    padding: 0; /* Removido padding, pois a altura já define o espaço */
+    
+    text-align: center;
+    
+    /* Estilos do background para esta seção específica (lotrFundo.png) */
+    background-image: url("lotrFundo.png"); /* Fundo específico para a capa */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    /* Adicionar um overlay para melhorar a leitura do título */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4); /* Overlay escuro (simulando ::before) */
+}
+
+.anel {
+    width: 400px; /* Mantém o tamanho original do anel */
+    height: auto; /* Mantém a proporção da imagem */
+    /* Garante que o anel não seja afetado pelo display flex da imagemCentral */
+    flex-shrink: 0;
+    z-index: 1; /* Garante que o anel fique acima do overlay */
+}
+
+.tituloCentral {
+    position: absolute; /* Posição absoluta em relação a .imagemCentral */
+    font-size: clamp(3rem, 7vw, 6rem); /* Título responsivo, com tamanho maior */
+    font-family: 'MedievalSharp', cursive;
+    color: #f0e68c; /* Cor mais clara para contraste com fundo escuro */
+    text-shadow: 2px 2px 6px #000000; /* Sombra mais forte para destaque */
+    text-align: center;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centralização perfeita */
+    width: 90%; /* Garante que o título ocupe a largura para quebrar a linha se for longo */
+    z-index: 2; /* Garante que o título fique acima do anel e do overlay */
+    background-color: transparent; /* Certifica que o background do título é transparente */
+}
+
+.text-justify {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Estilos do MAIN */
+main {
+    flex-grow: 1; /* Faz o main ocupar todo o espaço restante disponível verticalmente */
+    padding: 40px 20px; /* Adiciona padding ao conteúdo principal */
+    max-width: 1000px; /* Limita a largura do conteúdo para melhor leitura */
+    margin: 0 auto; /* Centraliza o main na página */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente para o conteúdo */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Espaço entre a capa e o conteúdo */
+    margin-bottom: 40px; /* Espaço entre o conteúdo e o footer */
+}
+
+main h4, main h5 {
+    background-color: transparent; /* Garante que os títulos no main tenham fundo transparente */
+}
+
+main .text-danger { /* Estilo específico para o título "Quem somos nós?" e "Nossa História" */
+    color: #a04000 !important; /* Um tom mais terroso de vermelho/marrom */
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    border-bottom: 2px solid #a04000;
+    padding-bottom: 10px;
+}
+
+/* Estilos do FOOTER */
+footer {
+    background-color: #222;
+    color: #ffe2ac;
+    padding: 1.5rem 0;
+    margin-top: auto; /* IMPORTANTE: Empurra o footer para o final */
+    text-align: center;
+    width: 100%; /* Garante que o footer ocupe 100% da largura */
+}
+
+footer ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    background-color: transparent; /* Garante que o fundo seja transparente */
+}
+
+footer i {
+    font-size: 1.4rem;
+    color: #ffe2ac;
+    background-color: transparent; /* Garante que o fundo seja transparente */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    ul li {
+        margin: 0 1vw;
+    }
+
+    .imagemCentral {
+        height: 65vh; /* Ajusta a altura da capa em telas menores */
+    }
+
+    .anel {
+        width: 300px; /* Reduz o tamanho do anel em telas menores */
+    }
+
+    .tituloCentral {
+        font-size: clamp(2rem, 6vw, 4rem); /* Ajusta o tamanho do título */
+    }
+
+    main {
+        padding: 30px 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    main h5 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .texto-imagem {
+        font-size: 16px;
+    }
+
+    .texto-imagem img {
+        height: 1.8em;
+    }
+
+    ul li {
+        margin: 0 0.5vw;
+    }
+    
+    .imagemCentral {
+        height: 55vh; /* Altura ainda menor em celulares */
+    }
+
+    .anel {
+        width: 250px; /* Tamanho do anel para celulares */
+    }
+
+    .tituloCentral {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+    }
 }

@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login - Fliperama Isengard</title> <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,25 +16,21 @@
         <div class="container">
             <div class="flex">
                 <div class="texto-imagem">
-
-                    <img src="skyrim.simbolo.png">
-                    <nav>
+                    <img src="skyrim.simbolo.png" alt="Símbolo Skyrim"> <nav>
                         <ul>
                             <li><a href="inicio.html">Início</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="texto-imagem">
-                    <img src="eldenRing.logo.png">
-                    <nav>
+                    <img src="eldenRing.logo.png" alt="Logo Elden Ring"> <nav>
                         <ul>
                             <li><a href="login.html">Login</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="texto-imagem">
-                    <img src="dark.souls.png">
-                    <nav>
+                    <img src="dark.souls.png" alt="Dark Souls"> <nav>
                         <ul>
                             <li><a href="catalogoDeJogos.html">Catálogo de Jogos</a></li>
                         </ul>
@@ -44,36 +39,37 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="center" id="login">
 
-            <div class="cont-Login shadow">
+    <main class="login-main"> <section class="center" id="login">
+            <h1 class="titulo-login">Faça seu Login</h1> <div class="cont-Login shadow">
                 <form>
-                    <label for="Nome"> Digite seu nome completo: </label><br>
-                    <input type="name" id="Nome" name="Nome">
+                    <label for="nomeCompleto"> Digite seu nome completo: </label><br>
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Seu nome completo">
 
-                    <label for="E-mail"> Digite seu E-mail: </label><br>
-                    <input type="email" id="E-mail" name="E-mail">
+                    <label for="emailUsuario"> Digite seu E-mail: </label><br>
+                    <input type="email" id="emailUsuario" name="emailUsuario" placeholder="seuemail@exemplo.com">
 
-                    <label for="Senha"> Digite sua senha: </label><br>
-                    <input type="password" id="Senha" name="Senha">
+                    <label for="senhaUsuario"> Digite sua senha: </label><br>
+                    <input type="password" id="senhaUsuario" name="senhaUsuario" placeholder="Sua senha">
 
-                    <label for="Nome"> Confirme sua senha: </label><br>
-                    <input type="name" id="Nome" name="Nome">
+                    <label for="confirmaSenha"> Confirme sua senha: </label><br>
+                    <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha">
+
                     <div class="formulario">
                         <button type="submit" class="botao-login">Confirmar Login</button>
                     </div>
                 </form>
             </div>
         </section>
-        <div class="formulario box">
-            <div class="boxNovo">
+
+        <div class="formulario box info-desconto"> <div class="boxNovo">
                 <p>Ao enviar ou confirmar o login, você receberá 5% de desconto na cafeteria “Tempero do Davi” em
                     qualquer pedido.
                 </p>
             </div>
         </div>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>

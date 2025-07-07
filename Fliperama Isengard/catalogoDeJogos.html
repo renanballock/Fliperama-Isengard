@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Jogos</title>
+    <title>Catálogo de Jogos - Fliperama Isengard</title>
     <link rel="stylesheet" href="catalogoDeJogos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <div class="container">
             <div class="flex">
                 <div class="texto-imagem">
-                    <img src="skyrim.simbolo.png">
+                    <img src="skyrim.simbolo.png" alt="Símbolo Skyrim">
                     <nav>
                         <ul>
                             <li><a href="inicio.html">Início</a></li>
@@ -23,7 +24,7 @@
                     </nav>
                 </div>
                 <div class="texto-imagem">
-                    <img src="eldenRing.logo.png">
+                    <img src="eldenRing.logo.png" alt="Logo Elden Ring">
                     <nav>
                         <ul>
                             <li><a href="login.html">Login</a></li>
@@ -31,7 +32,7 @@
                     </nav>
                 </div>
                 <div class="texto-imagem">
-                    <img src="dark.souls.png">
+                    <img src="dark.souls.png" alt="Dark Souls">
                     <nav>
                         <ul>
                             <li><a href="catalogoDeJogos.html">Catálogo de Jogos</a></li>
@@ -42,67 +43,79 @@
         </div>
     </header>
 
-    <div class="containerCorpo">
-        <div class="jogo">
-            <img src="shadowofmordor.png" alt="Shadow of Mordor"><br>
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/Middle-earth:_Shadow_of_Mordor">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">Middle-Earth: Shadow OF Mordor</span>
-                </a>
-            </button>
-        </div>
+    <main class="catalogo-main">
+        <h1 class="titulo-catalogo">Nosso Catálogo de Jogos</h1>
+        <div class="containerCorpo">
+            <div class="jogo">
+                <img src="shadowofmordor.png" alt="Capa de Middle-Earth: Shadow of Mordor">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/Middle-earth:_Shadow_of_Mordor">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">Middle-Earth: Shadow OF Mordor</span>
+                    </a>
+                </button>
+            </div>
 
-        <div class="jogo">
-            <img src="baldursgatecapa.png" alt="Baldur's Gate"><br>
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/Baldur%27s_Gate_III">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">Baldur's Gate III</span>
-                </a>
-            </button>
-        </div>
+            <div class="jogo">
+                <img src="baldursgatecapa.png" alt="Capa de Baldur's Gate III">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/Baldur%27s_Gate_III">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">Baldur's Gate III</span>
+                    </a>
+                </button>
+            </div>
 
-        <div class="jogo">
-            <img src="skyrimcapa.png" alt="Skyrim"><br>
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/The_Elder_Scrolls_V:_Skyrim">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">The Elder Scrolls V: Skyrim</span>
-                </a>
-            </button>
-        </div>
+            <div class="jogo">
+                <img src="skyrimcapa.png" alt="Capa de The Elder Scrolls V: Skyrim">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/The_Elder_Scrolls_V:_Skyrim">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">The Elder Scrolls V: Skyrim</span>
+                    </a>
+                </button>
+            </div>
 
-        <div class="jogo">
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/Dark_Souls_III">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">Dark Souls III</span>
-                </a>
-            </button><br><br>
-            <img src="darksouls3capa.png" alt="Dark Souls III">
-        </div>
+            <div class="jogo">
+                <img src="darksouls3capa.png" alt="Capa de Dark Souls III">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/Dark_Souls_III">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">Dark Souls III</span>
+                    </a>
+                </button>
+            </div>
 
-        <div class="jogo">
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/Final_Fantasy_III">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">Final Fantasy III</span>
-                </a>
-            </button><br><br>
-            <img src="finalfantasycapa.png" alt="Final Fantasy III">
-        </div>
+            <div class="jogo">
+                <img src="finalfantasycapa.png" alt="Capa de Final Fantasy III">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/Final_Fantasy_III">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">Final Fantasy III</span>
+                    </a>
+                </button>
+            </div>
 
-        <div class="jogo">
-            <button>
-                <a href="https://pt.wikipedia.org/wiki/Elden_Ring">
-                    <i class="bi bi-arrow-right"></i>
-                    <span class="nome-jogo">Elden Ring</span>
-                </a>
-            </button><br><br>
-            <img src="eldenringcapa.png" alt="Elden Ring">
+            <div class="jogo">
+                <img src="eldenringcapa.png" alt="Capa de Elden Ring">
+                <button>
+                    <a href="https://pt.wikipedia.org/wiki/Elden_Ring">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="nome-jogo">Elden Ring</span>
+                    </a>
+                </button>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer bg-dark text-light py-4">
+        <ul class="list-unstyled">
+            <li><i class="bi bi-telephone-fill"></i> (11) 1234-5678</li>
+            <li><i class="bi bi-instagram"></i> @fliperama_isengard</li>
+            <li><i class="bi bi-envelope-fill"></i> contato@isengard.com</li>
+            <li><i class="bi bi-geo-alt-fill"></i> Rua da Terra Média, 1000</li>
+        </ul>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>

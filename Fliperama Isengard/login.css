@@ -1,19 +1,41 @@
+/* Reset básico para todos os elementos */
 * {
     margin: 0;
     padding: 0;
-    background-color: #ffe2ac;
+    box-sizing: border-box; /* Boa prática: inclui padding e border na largura/altura do elemento */
 }
 
-.container {
-    font-size: 1.5vh;
-    font-size: 1.5vw;
+/* Configuração do body para layout Flexbox e fundo da página */
+body {
+    /* O background-color para o body */
+    background-color: #ffe2ac; /* Cor de fallback caso a imagem não carregue */
+    background-image: url('rivendell.png'); /* Sua imagem de fundo */
+    background-size: cover; /* Cobre toda a área do body */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Fixa a imagem de fundo na viewport */
+
+    display: flex; /* Transforma o body em um container flexível */
+    flex-direction: column; /* Empilha os filhos (header, main, footer) verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura da viewport */
+}
+
+/* Remover background-color do seletor universal */
+/* Isso evita que todos os elementos herdem a cor de fundo e atrapalhem a imagem de fundo ou outras cores */
+*:not(body) { /* Aplica a todos os elementos EXCETO o body */
+    background-color: initial; /* Reseta a cor de fundo para o padrão ou transparente */
+}
+
+/* Estilos para o cabeçalho */
+header .container {
+    font-size: clamp(12px, 1.5vw, 20px); /* Ajuste com clamp para melhor responsividade */
     width: 100%;
-    height: 10vh;
-    padding: 10vh 10vw;
-    box-sizing: border-box;
+    /* Removido height: 10vh; e padding: 10vh 10vw; pois podem causar problemas no header */
+    padding: 10px 5vw; /* Padding mais simples para o header */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o header */
 }
 
-.flex {
+header .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,27 +43,16 @@
 
 .texto-imagem {
     display: flex;
-    /* Faz texto e imagem ficarem lado a lado */
     align-items: center;
-    /* Alinha verticalmente */
     font-size: 20px;
     gap: 8px;
-    /* Espaço entre imagem e texto */
     text-decoration: underline;
-    text-decoration: black;
-
+    text-decoration-color: black; /* Correção: use text-decoration-color */
 }
 
 .texto-imagem img {
-    height: 1em;
+    height: 2em; /* Mais consistente, remova a altura de 1em duplicada */
     vertical-align: middle;
-    height: 2em;
-    /* aumenta o tamanho da imagem proporcional à fonte */
-}
-
-.imagemCentral {
-    align-items: center;
-    background-position: center;
 }
 
 ul {
@@ -50,17 +61,28 @@ ul {
 
 ul li {
     display: inline-block;
-    margin: 0 2.1vw
+    margin: 0 2.1vw;
 }
 
 ul li a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Cor clara para links no header escuro */
     text-decoration: none;
 }
 
+/* Estilos específicos para o MAIN da página de login */
+.login-main { /* Usando a nova classe do HTML */
+    flex-grow: 1; /* Faz o main ocupar todo o espaço restante disponível verticalmente */
+    display: flex;
+    flex-direction: column; /* Organiza as seções internas do main em coluna */
+    align-items: center; /* Centraliza o conteúdo do main horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo do main verticalmente (se houver espaço) */
+    padding: 20px; /* Adiciona um padding geral */
+}
+
+
 #login {
     width: 100%;
-    height: 60vh;
+    max-width: 600px; /* Limita a largura máxima do formulário */
     padding: 2%;
     display: flex;
     flex-direction: column;
@@ -68,75 +90,88 @@ ul li a {
     justify-content: flex-start;
     gap: 3vh;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo claro semi-transparente para a seção de login */
+    border-radius: 10px;
+    margin-bottom: 20px; /* Espaço abaixo da seção de login */
 }
 
-
-#login h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 45px;
+.titulo-login {
+    font-family: 'MedievalSharp', cursive; /* Usei a fonte MedievalSharp se for o estilo do site */
+    font-size: clamp(30px, 4vw, 45px); /* Responsivo */
+    color: #2f1b0c; /* Cor inspirada no site original */
+    text-shadow: 1px 1px 2px #000;
+    margin-bottom: 30px;
+    background-color: transparent; /* Garante que o fundo do h1 seja transparente */
 }
-
 
 .cont-Login {
-    align-items: flex-start;
+    align-items: flex-start; /* Alinha os itens do formulário à esquerda */
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%; /* Ajustado para se adequar ao max-width de #login */
     height: auto;
     border-radius: 20px;
-    padding: 6vh;
+    padding: 30px; /* Padding ajustado */
     box-sizing: border-box;
     text-align: justify;
+    background-color: transparent; /* Garante que o fundo do cont-Login seja transparente */
 }
 
 .cont-Login label {
     color: #000000e1;
-    font-size: 25px;
-    margin-left: 20px;
+    font-size: clamp(16px, 2vw, 22px); /* Responsivo */
+    margin-left: 0; /* Removido margin-left fixo para melhor responsividade */
+    margin-top: 15px; /* Espaço entre labels */
+    background-color: transparent;
 }
 
 .cont-Login form {
     width: 100%;
+    background-color: transparent;
 }
 
 .cont-Login input {
-    margin-top: 10px;
+    margin-top: 5px; /* Espaço menor acima do input */
     background-color: #afafaf;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px; /* Bordas um pouco menos arredondadas */
     width: 100%;
-    height: 60px;
+    height: 45px; /* Altura ajustada */
     padding: 0 15px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 15px; /* Espaço abaixo do input */
 }
 
-
+/* Botões */
 button {
-    margin-top: 3vh;
+    margin-top: 20px; /* Ajuste a margem superior se necessário */
     background-color: #707070;
     color: #fff;
     border: none;
-    width: 20%;
-    height: 5vh;
+    width: auto; /* Deixe a largura ser definida pelo padding */
+    padding: 10px 25px; /* Padding para definir a largura */
+    height: auto;
     transition: .5s;
     cursor: pointer;
+    border-radius: 8px; /* Borda arredondada para botões */
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #000;
 }
 
-.formulario {
+.formulario { /* Para centralizar o botão de login */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* centraliza no eixo horizontal */
+    justify-content: center; /* Centraliza o botão */
+    width: 100%;
+    background-color: transparent;
 }
 
 .botao-login {
+    /* Estilos já definidos em 'button', sobreposições mínimas */
     margin-top: 20px;
-    /* espaço acima do botão */
     padding: 10px 20px;
     background-color: #555;
     color: white;
@@ -145,27 +180,30 @@ button:hover {
 }
 
 .shadow {
-    border: 2px solid black
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    border: none; /* Removido border: 2px solid black; para usar a sombra */
 }
 
-.box {
+.info-desconto { /* Nova classe para o box de informações */
     width: 100%;
-    height: 10vh;
+    max-width: 600px; /* Mesma largura máxima do formulário para alinhamento */
+    height: auto; /* Altura automática para o conteúdo */
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centraliza no eixo horizontal */
-    padding: 20px;
+    padding: 15px 20px; /* Padding ajustado */
     box-sizing: border-box;
+    margin-top: 20px; /* Espaço entre o formulário e este box */
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente */
+    border-radius: 10px;
 }
 
 
-
 .boxNovo {
-    width: 40%;
-    height: 5vh;
+    width: 90%; /* Ajustado para se adequar ao max-width do .info-desconto */
+    height: auto; /* Altura automática para o conteúdo */
     justify-content: center;
     background-color: #b3b3b3;
     color: black;
@@ -173,16 +211,50 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centraliza no eixo horizontal */
+    padding: 10px; /* Padding interno */
 }
 
 .boxNovo p {
-    background-color: #b3b3b3;
+    background-color: #b3b3b3; /* Mantém a cor de fundo do parágrafo */
+    text-align: center; /* Centraliza o texto dentro do parágrafo */
+    margin: 0; /* Remove margem padrão do p */
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsivo */
 }
 
-.imagemFundo {
+/* Remover .imagemFundo se não for usado nesta página */
+/* .imagemFundo {
     background-image: url("rivendell.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+} */
+
+/* Estilos do FOOTER */
+footer {
+    background-color: #222; /* Fundo escuro para o footer */
+    color: #ffe2ac; /* Texto claro */
+    padding: 1.5rem 0; /* Padding vertical */
+    margin-top: auto; /* Empurra o footer para o final quando usado com flex-direction: column no body */
+    text-align: center; /* Centraliza o conteúdo do footer */
+    width: 100%; /* Garante que o footer ocupe 100% da largura */
+}
+
+footer ul {
+    padding-left: 0;
+    display: flex; /* Transforma a lista em flexbox */
+    flex-direction: column; /* Coloca os itens um abaixo do outro */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+footer ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+footer i {
+    font-size: 1.4rem;
+    color: #ffe2ac;
 }
